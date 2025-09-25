@@ -3,12 +3,12 @@
 # Fecha: 06-06-2024
 
 
-#SOLUCIÓN VERIFICANDO RUT DE ACUERDO A DÍGITO VERIFICADOR
+#SOLUCIÓN VERIFICANDO RUT DE ACUERDO A DÍGITO VERIFICADOR con IF 
 #El usuario ingresa su RUT sin puntos ni guión, y el programa indica si es válido o no.
 #Ejemplo: 12345678k
-#El programa debe considerar que el RUT puede tener 8 o 9 dígitos (sin contar el dígito verificador).
+#El programa considera que el RUT puede tener 8 o 9 dígitos (sin contar el dígito verificador).
 #El dígito verificador puede ser un número del 0 al 9 o la letra 'k'.
-#El programa debe validar el RUT utilizando el algoritmo oficial de cálculo del dígito verificador.
+#El programa valida el RUT utilizando el algoritmo oficial de cálculo del dígito verificador.
 
 
 def verificar_rut():
@@ -16,12 +16,12 @@ def verificar_rut():
     if len(rut)==9:
         for i in rut:
             rut_invertido=i+rut_invertido
-        print(rut_invertido)
+        #print(rut_invertido) lo tenía para comprobar cuando elaboraba la función
     elif len(rut)==8:
         rutCompleto="0"+rut
         for i in rutCompleto:
             rut_invertido=i+rut_invertido
-        print(rut_invertido)
+        #print(rut_invertido) lo tenía para comprobar cuando elaboraba la función
     else:
         print("Ingrese un rut correcto")
     a=int(rut_invertido[1])*2
@@ -48,12 +48,12 @@ def verificar_rut():
         else: 
             print("Rut inválido")
     elif len(rut)==8:
-        if rutCompleto[9]==dig_verificador:
+        if rutCompleto[8]==dig_verificador:
             print("Rut Válido")
         else: 
             print("Rut inválido")
     else:
         print("Rut inválido")
 
-rut=input("Ingrese nº rut sin guión ni puntos: ").lower()
+rut=input("Ingrese nº rut sin guión ni puntos (Ej: 12.345.678-9 --> 123456789) ").lower()
 verificar_rut()
