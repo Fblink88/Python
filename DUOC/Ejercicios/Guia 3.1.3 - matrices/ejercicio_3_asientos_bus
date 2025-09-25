@@ -1,0 +1,47 @@
+#Opcion 1 - Primera solución
+
+
+bus = [
+    [ 1,  2,  3,  4],
+    [ 5,  6,  7,  8],
+    [ 9, 10, 11, 12],
+    [13, 14, 15, 16],
+    [17, 18, 19, 20],
+    [21, 22, 23, 24],
+    [25, 26, 27, 28],
+    [29, 30, 31, 32],
+    [33, 34, 35, 36],
+    [37, 38, 39, 40]
+]
+
+print("\nOpcion 1 - Primera solución")
+print("--- Asientos del Bus ---")
+for fila in bus:
+
+  print(f"{fila[0]}\t{fila[1]} \t\t {fila[2]}\t{fila[3]}")
+
+
+
+#Opcion 2 - Segunda solución (más automática)
+
+# Arreglo vacío de 10x4 y un contador de asientos
+filas = 10
+columnas = 4
+bus = []
+numero_asiento = 1
+
+# Llenar el arreglo con los números de asiento de forma automática
+for i in range(filas):
+  # Crear una nueva fila vacía
+  fila = []
+  for j in range(columnas):
+    # Agregar el número de asiento a la fila y luego aumentar el contador
+    fila.append(numero_asiento)
+    numero_asiento += 1
+  # Agregar la fila completa al arreglo del bus
+  bus.append(fila)
+
+print("\nOpcion 2 - Solución solución")
+print("--- Asientos del Bus ---")
+for fila in bus:
+  print(f"{fila[0]}\t{fila[1]} \t\t {fila[2]}\t{fila[3]}")
